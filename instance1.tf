@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"  # Specify your desired region
+  region = var.aws_region  # Specify your desired region
 }
 
 resource "aws_instance" "mongodb_instance_1" {
