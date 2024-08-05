@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "us-east-2"  # Specify your desired region
+  region = var.aws_region  # Specify your desired region
 }
 
 resource "aws_instance" "mongodb_instance_3" {
-  ami           = "ami-024ebc7de0fc64e44"  # Amazon Linux 2 AMI
-  instance_type = "t2.micro"  # Use a free-tier instance type or your desired instance type
+  ami           = var.ami_id # Amazon Linux 2 AMI
+  instance_type = var.instance_type  # Use a free-tier instance type or your desired instance type
 
   user_data = <<-EOM
               #!/bin/bash
